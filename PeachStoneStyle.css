@@ -1,0 +1,21 @@
+﻿body {
+    background-color: #1c1c1c;
+    
+}
+#Game {
+   margin-left: 150px;
+}
+
+h1 {
+    color: white;
+    margin-left: 150px;
+}
+p {
+    color: white; 
+}
+
+#map {
+    height: 400px; 
+    width: 400px; 
+}
+

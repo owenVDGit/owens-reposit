@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Peach Game</title>
+    <link rel="stylesheet" type="text/css" href="PeachStoneStyle.css" /> 
+    
+
+</head>
+
+
+<body>
+    <div id="Game">
+        <!--canvas link-->
+        <canvas id="PeachCanvas" width="400" height="400"></canvas>
+        <!--Buttons to play-->
+
+        <br />
+        <!--buttons-->
+
+        <button id="PlayButton"> Play </button>
+        <button id="ShakeBowl"> Shake </button>
+        <button id="PassTurn"> Pass Turn </button>
+        <button id="Restart"> Restart </button>
+    </div>
+    <br />
+
+    <h1> Guskä'eh</h1>
+    <p>The Peach-stone game (Guskä'eh) was a gambling game in which different native american clans bet against each other. Traditionally it was played on the final day of the Green Corn, Harvest, and Mid-winter festivals. The game was played using a wooden bowl about one foot in diameter and six peach-stones (pits) ground to oval shape and burned black on one side. A "bank" of beans, usually 100, was used to keep score and the winner was the side who won them all. Two players sat on a blanket-covered platform raised a few feet off the floor. To play the peach stones were put into the bowl and shaken. Winning combinations were five of either color or six of either color showing. </p>
+
+    <!-- link script-->
+    <script src="PeachStoneScript.js"> </script>
+    <!--shake script-->
+    <!--must have object movement enabled in settings, must use chrome not safari-->
+    <!--credit http://qnimate.com/detect-shake-using-javascript/-->
+    <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+    <script>
+        
+    //listen to shake event
+    var shakeEvent = new Shake({threshold: 15});
+    shakeEvent.start();
+    window.addEventListener('shake', function(){
+             shakeBowl(); 
+    }, false);
+
+    //stop listening
+    function stopShake(){
+        shakeEvent.stop();
+    }
+
+    //check if shake is supported or not.
+    if(!("ondevicemotion" in window)){alert("Not Supported");}
+    </script>
+
+    <!--google map of native reserve-->
+    <!--credit https://developers.google.com/maps/documentation/javascript/tutorial-->
+    <div class="mapouter"><div class="gmap_canvas"><iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=six%20nations%20grand%20river&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div>
+    <style>
+        .mapouter {
+            position: relative;
+            text-align: right;
+            height: 500px;
+            width: 600px;
+        }
+
+        .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 500px;
+            width: 600px;
+        }
+    </style></div>
+
+</body>
+
+
+
+
+
+</html>
